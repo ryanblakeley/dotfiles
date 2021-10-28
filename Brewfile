@@ -9,7 +9,6 @@ brew 'flow'
 brew 'freetype'
 brew 'git'
 brew 'go'
-brew 'hub'
 brew 'imagemagick'
 brew 'jp2a'
 brew 'libcaca', args: ['with-imlib2']
