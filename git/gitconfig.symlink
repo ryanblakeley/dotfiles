@@ -2,7 +2,7 @@
 [include]
         path = ~/.gitconfig.local
 [hub]
-	protocol = ssh
+        protocol = ssh
 [alias]
         co = checkout
         promote = !$ZSH/bin/git-promote
@@ -35,9 +35,9 @@
 [format]
         pretty = format:%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset
 [pull]
-	rebase = true
+        rebase = true
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+        clean = git-lfs clean -- %f
+        smudge = git-lfs smudge -- %f
+        process = git-lfs filter-process
+        required = true
