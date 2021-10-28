@@ -175,3 +175,5 @@ let g:fugitive_bitbucket_domains = ['https://code.squarespace.net']
 autocmd BufRead,BufNewFile ~/Code/acuity/* setlocal noexpandtab softtabstop=0 tabstop=2 nolist
 " Lungo
 " autocmd BufRead,BufNewFile ~/Code/lungo-frontend/* setlocal expandtab shiftwidth=4 tabstop=4 autoindent smarttab
+" Plus pages app
+autocmd BufRead,BufNewFile ~/Code/pages-app/* setlocal noexpandtab softtabstop=0 tabstop=2 nolist
