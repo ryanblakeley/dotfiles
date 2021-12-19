@@ -98,7 +98,6 @@ Plugin 'tpope/vim-surround'
 Plugin 'valloric/MatchTagAlways'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'zxqfl/tabnine-vim'
-
 " Plugin 'jistr/vim-nerdtree-tabs'
 " Plugin 'nanotech/jellybeans.vim'
 " Plugin 'rojobuffalo/vim-fubitive'
@@ -160,7 +159,7 @@ let g:multi_cursor_next_key = '<C-s>'
 map <C-n> :NERDTreeToggle<CR>
 map <C-f> :NERDTreeFind<CR>
 let NERDSpaceDelims=1
-
+let NERDTreeQuitOnOpen=1
 
 
 """"" RIPGREP SETTINGS
@@ -177,3 +176,5 @@ autocmd BufRead,BufNewFile ~/Code/acuity/* setlocal noexpandtab softtabstop=0 ta
 " autocmd BufRead,BufNewFile ~/Code/lungo-frontend/* setlocal expandtab shiftwidth=4 tabstop=4 autoindent smarttab
 " Plus pages app
 autocmd BufRead,BufNewFile ~/Code/pages-app/* setlocal noexpandtab softtabstop=0 tabstop=2 nolist
+autocmd BufRead,BufNewFile ~/Code/pages-app/* setlocal includeexpr=substitute(v:fname,'^\/','~/Code/pages-app/src/','') 
+autocmd BufRead,BufNewFile ~/Code/pages-app/* setlocal suffixesadd=.js,.ts,.tsx

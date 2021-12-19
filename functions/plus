@@ -1,0 +1,7 @@
+plus() {
+  echo "Launching Plus development console."
+
+  # Terminal tabs for each development process
+  newtab -g eval "sleep 2; cd ~/Code/pages-app; m; npm run dev;"
+  eval "cd ~/Code/plus-api; d-c up -d; npm run dev;"
+}
