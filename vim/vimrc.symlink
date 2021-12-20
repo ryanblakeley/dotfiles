@@ -175,6 +175,6 @@ autocmd BufRead,BufNewFile ~/Code/acuity/* setlocal noexpandtab softtabstop=0 ta
 " Lungo
 " autocmd BufRead,BufNewFile ~/Code/lungo-frontend/* setlocal expandtab shiftwidth=4 tabstop=4 autoindent smarttab
 " Plus pages app
-autocmd BufRead,BufNewFile ~/Code/pages-app/* setlocal noexpandtab softtabstop=0 tabstop=2 nolist
-autocmd BufRead,BufNewFile ~/Code/pages-app/* setlocal includeexpr=substitute(v:fname,'^\/','~/Code/pages-app/src/','') 
-autocmd BufRead,BufNewFile ~/Code/pages-app/* setlocal suffixesadd=.js,.ts,.tsx
+autocmd BufRead,BufNewFile ~/Code/plus-frontend/* setlocal noexpandtab softtabstop=0 tabstop=2 nolist
+autocmd BufRead,BufNewFile ~/Code/plus-frontend/* setlocal includeexpr=substitute(v:fname,'^\/','~/Code/plus-frontend/src/','') 
+autocmd BufRead,BufNewFile ~/Code/plus-frontend/* setlocal suffixesadd=.js,.ts,.tsx
