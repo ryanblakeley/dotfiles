@@ -40,6 +40,7 @@ autocmd FileType json setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType markdown setlocal shiftwidth=2 tabstop=2
 autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=4 autoindent smarttab
 autocmd BufNewFile,BufRead *.pyde setlocal filetype=python
+autocmd FileType typescript setlocal completeopt-=menu
 " autocmd FileType smarty setlocal filetype=smarty.html
 
 
@@ -67,6 +68,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'   " required
 
 " Other plugins
+" shows symbols in left gutter for line changes, hunks
 Plugin 'airblade/vim-gitgutter'
 " Plugin 'altercation/vim-colors-solarized'
 Plugin 'bling/vim-airline'
@@ -74,13 +76,13 @@ Plugin 'blueyed/smarty.vim'
 Plugin 'chriskempson/base16-vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 " Plugin 'endel/vim-github-colorscheme'
+Plugin 'github/copilot.vim'
 Plugin 'jparise/vim-graphql'
 Plugin 'jremmen/vim-ripgrep'
 " Plugin 'junegunn/goyo.vim'
 " Plugin 'junegunn/seoul256.vim'
 Plugin 'JulesWang/css.vim'
 " Plugin 'justinj/vim-react-snippets'
-" Plugin 'leafgarland/typescript-vim'
 " Plugin 'Lokaltog/vim-distinguished'
 " Plugin 'MaxMEllon/vim-jsx-pretty'
 " Plugin 'moll/vim-node'
@@ -97,8 +99,9 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-rhubarb.git'
 Plugin 'tpope/vim-surround'
 Plugin 'valloric/MatchTagAlways'
+" shows symbols for git statuses on files in nerdtree
 Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'zxqfl/tabnine-vim'
+" Plugin 'zxqfl/tabnine-vim'
 " Plugin 'jistr/vim-nerdtree-tabs'
 " Plugin 'nanotech/jellybeans.vim'
 " Plugin 'rojobuffalo/vim-fubitive'
@@ -129,7 +132,7 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
+let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_loc_list_height = 5
@@ -140,6 +143,8 @@ let g:syntastic_filetype_map = { "javascriptreact": "javascript" }
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_typescript_checkers = ['tsuquyomi']
+let g:tsuquyomi_disable_quickfix = 1
+let g:tsuquyomi_completion_detail = 1
 
 
 
@@ -169,13 +174,18 @@ nnoremap \ :Rg<CR>
 
 
 """"" Project-specific configuration
-" Squarespace
-let g:fugitive_bitbucket_domains = ['https://code.squarespace.net']
-" Acuity
-autocmd BufRead,BufNewFile ~/Code/acuity/* setlocal noexpandtab softtabstop=0 tabstop=2 nolist
 " Lungo
 " autocmd BufRead,BufNewFile ~/Code/lungo-frontend/* setlocal expandtab shiftwidth=4 tabstop=4 autoindent smarttab
+" Acuity
+" autocmd BufRead,BufNewFile ~/Code/acuity/* setlocal noexpandtab softtabstop=0 tabstop=2 nolist
+" Squarespace
+" let g:fugitive_bitbucket_domains = ['https://code.squarespace.net']
 " Plus pages app
-autocmd BufRead,BufNewFile ~/Code/plus-frontend/* setlocal noexpandtab softtabstop=0 tabstop=2 nolist
-autocmd BufRead,BufNewFile ~/Code/plus-frontend/* setlocal includeexpr=substitute(v:fname,'^\/','~/Code/plus-frontend/src/','') 
-autocmd BufRead,BufNewFile ~/Code/plus-frontend/* setlocal suffixesadd=.js,.ts,.tsx
+" autocmd BufRead,BufNewFile ~/Code/plus-frontend/* setlocal noexpandtab softtabstop=0 tabstop=2 nolist
+" autocmd BufRead,BufNewFile ~/Code/plus-frontend/* setlocal includeexpr=substitute(v:fname,'^\/','~/Code/plus-frontend/src/','') 
+" autocmd BufRead,BufNewFile ~/Code/plus-frontend/* setlocal suffixesadd=.js,.ts,.tsx
+" Double
+autocmd BufRead,BufNewFile ~/Code/cockpit.web/* setlocal noeol binary
+autocmd BufRead,BufNewFile ~/Code/directory.api/* setlocal noeol binary
+autocmd BufRead,BufNewFile ~/Code/double.web/* setlocal noeol binary
+autocmd BufRead,BufNewFile ~/Code/topics.api/* setlocal noeol binary
